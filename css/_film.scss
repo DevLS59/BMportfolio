@@ -1,0 +1,163 @@
+.container-video {
+    display : flex;
+     background-image: linear-gradient(to top, #7028e4 0%, #e5b2ca 100%);
+     justify-content: center;
+     align-items: center;
+     height : 100vh;
+}
+
+.video {
+    width : 100%;
+}
+
+.logo-film {
+    position : absolute;
+    width : 400px;
+    height : 400px
+}
+
+.allVid {
+    width :100%;
+    max-width : 800px;
+    position : relative;
+    overflow : hidden;
+
+
+    &:hover .controls {
+        transform : translateY(0);
+    }
+}
+
+.controls {
+    display : flex;
+    position : absolute;
+    bottom : 0;
+    width : 100%;
+    flex-wrap : wrap;
+    background : rgba(0,0,0,0.7);
+    transform : translateY(100%) translatey(5px);
+    transition : all 0.2s;  
+
+    .buttons {
+        padding : 10px;
+       
+
+        button {
+            background : none;
+            border : 0;
+            outline : none;
+            cursor : pointer;
+            color : #fff;
+            margin : 0 1rem;
+
+        }
+           
+}}
+
+#mute {
+    position : relative;
+    top : -5px;
+   
+}
+
+.buttons #play-pause::before {
+    
+    content: '\f144';
+    font-family: 'Font Awesome 5 free';
+    width: 30px;
+    height: 30px;
+    display: inline-block;
+    font-size: 28px;
+    color: #fff;
+}
+.buttons #play-pause.play::before {
+    content: '\f144';
+}
+.buttons #play-pause.pause::before {
+    content: '\f28b';
+}
+
+.bar {
+    height : 10px;
+    width : 100%;
+   background : #000;
+}
+
+.juice {
+    background: rgb(187,6,236);
+    background: linear-gradient(90deg, rgba(187,6,236,1) 0%, rgba(253,45,171,1) 100%);
+    height : 10px ;
+    width : 0;
+
+}
+
+.btn-retour {
+    position : absolute;
+    top : 2rem;
+    right : 2rem;
+    background-color : purple;
+    overflow : hidden;
+    color : #fff;
+    border : none;
+    text-transform : uppercase;
+    border-radius : 4px;
+    padding : 15px 20px;
+    cursor : pointer;
+    outline : none;
+
+    a {
+        color : inherit
+    }
+    
+}
+
+
+/* Spinner */ 
+.spinner-wrapper{
+    width: 100%;
+    height: 100%;
+    background-color: #151515;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 9999;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.spinner {
+    position: relative;
+    width: 8rem;
+    height: 8rem;
+    border-radius: 50%;
+}
+
+.spinner::before,
+.spinner:after{
+    content: "";
+    position: absolute;
+    border-radius: 50%;
+}
+
+.spinner:before {
+    width: 100%;
+    height: 100%;
+    background-image:linear-gradient(90deg, #ff00cc 0%,#333399 100% );
+    animation: spin .5s infinite linear;
+}
+.spinner:after {
+    width: 90%;
+    height: 90%;
+    background-color: #151515;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+@keyframes spin {
+    to {
+        transform: rotate(360deg);
+    }
+
+}

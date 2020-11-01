@@ -1,0 +1,88 @@
+.spinner-wrapper{
+    width: 100%;
+    height: 100%;
+    background-color: #151515;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 9999;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.spinner {
+    position: relative;
+    width: 8rem;
+    height: 8rem;
+    border-radius: 50%;
+}
+
+.spinner::before,
+.spinner:after{
+    content: "";
+    position: absolute;
+    border-radius: 50%;
+}
+
+.spinner:before {
+    width: 100%;
+    height: 100%;
+    background-image:linear-gradient(90deg, #ff00cc 0%,#333399 100% );
+    animation: spin .5s infinite linear;
+}
+.spinner:after {
+    width: 90%;
+    height: 90%;
+    background-color: #151515;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+@keyframes spin {
+    to {
+        transform: rotate(360deg);
+    }
+
+}
+
+.main-content {
+    display : flex;
+    background-image: linear-gradient(to top, #7028e4 0%, #e5b2ca 100%);
+    justify-content: center;
+    align-items: center;
+    height : 100vh;
+
+    .container-film {
+        width : 960px;
+        height : 540px;
+
+
+        @media (max-width : 1000px) {
+            width : 680px ;
+            height : 382px;
+        }
+
+        @media (max-width : 700px){
+            width : 480px;
+            height : 270px;
+        }
+        @media (max-width : 400px){
+            width : 300px;
+            height : 168.7px;
+        }
+
+
+        iframe {
+            width : 100%;
+            height : 100%;
+        }
+    }
+
+    .btn-retour {
+        position : absolute ;
+        top : 2rem;
+        right : 2rem;
+    }
+}

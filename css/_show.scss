@@ -1,0 +1,127 @@
+@import 'variable';
+
+.burger {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    height: 40;
+    width: 40px;
+    display: none;
+
+    @media (max-width : 500px) {
+        display: block;
+    }
+
+    span {
+        width: 100%;
+        margin-bottom: 10px;
+        height: 2px;
+        background: white;
+        display: block;
+    }
+}
+
+.section-img {
+    background: url('../images//bgBanner2.jpg');
+    background-position: 50% 80%;
+    background-size: cover;
+    background-attachment: fixed;
+    color: #fff;
+    position: relative;
+
+    h1 {
+        font-size: 55px;
+        margin: 0;
+        z-index: 2;
+        width: 100%;
+
+        @media (max-width : 600px) {
+            font-size: 40px;
+        }
+
+        span {
+            color: $blue;
+            text-transform: uppercase;
+        }
+    }
+
+    .title_header {
+        font-size: 40px;
+        letter-spacing: 10px;
+    }
+
+
+
+    p {
+        font-size: 20px;
+        text-transform: uppercase;
+
+        @media (max-width : 600px) {
+            font-size: 16px;
+        }
+
+    }
+}
+
+
+
+
+.navbar {
+    position: fixed;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    height: 5rem;
+    width: 80%;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    z-index: 100;
+
+    @media (max-width : 530px) {
+        display: none;
+    }
+
+    .logo {
+        width: 80px;
+        height: 80px;
+    }
+
+    .nav-items {
+        display: flex;
+        list-style-type: none;
+
+        a {
+            text-decoration: none;
+            color: #765cc0;
+            ;
+            font-weight: 600;
+            padding: 0 1rem;
+            font-size: 1.1rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            display: inline-block;
+            position: relative;
+
+            &:hover::before {
+                width: 50%;
+            }
+
+            &::before {
+                content: '';
+                position: absolute;
+                bottom: 0;
+                left: 50%;
+                transform: translateX(-50%);
+                transform-origin: left;
+                height: 1px;
+                width: 0;
+                background: $blue;
+                text-align: center;
+                transition: 0.3s ease-in-out;
+
+            }
+        }
+    }
+}
